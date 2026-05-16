@@ -188,7 +188,7 @@ with col_left:
     for f in numeric_features:
         val = row[f]
         if val == 0:
-            lo, hi = 0, 100
+            lo, hi = 0.0, 100.0
         else:
             lo = float(max(0, val * 0.2))
             hi = float(val * 2.5 + 1)
