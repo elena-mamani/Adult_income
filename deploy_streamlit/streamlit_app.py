@@ -1,3 +1,4 @@
+from pathlib import Path
 import joblib
 import pandas as pd
 import streamlit as st
@@ -6,7 +7,8 @@ import numpy as np
 
 st.set_page_config(page_title='XGBoost Adult Income Explorer', layout='wide')
 
-artifact = joblib.load('xgb_adult_income_model.joblib')
+HERE = Path(__file__).parent
+artifact = joblib.load(HERE / 'xgb_adult_income_model.joblib')
 model = artifact['model']
 feature_names = artifact['feature_names']
 numeric_features = artifact['numeric_features']
